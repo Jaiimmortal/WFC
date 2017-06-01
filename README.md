@@ -1,13 +1,13 @@
 # WFC
 ## About ##
-Word Frequency Counter used to scrap all headlines of the first twenty pages from [Ycombinator News](https://news.ycombinator.com/)
+Word Frequency Counter used to scrap all headlines of the first twenty pages from [YCombinator News](https://news.ycombinator.com/)
 
 ## Built with: ##
 
- * (BeautifulSoup4)[https://pypi.python.org/pypi/beautifulsoup4] - For Parsing, need to download externally.
- * (Pandas)[http://pandas.pydata.org/] - For Data Manipulation and Analysing, need to download externally.
- * (Matplotlib)[https://matplotlib.org/] - For Data Visualisation, need to download externally.
- * (requests)[http://docs.python-requests.org/en/master/] - For fetching the HTML document, part of your standard library.
+ (BeautifulSoup4)[https://pypi.python.org/pypi/beautifulsoup4] - For Parsing, need to download externally.
+ (Pandas)[http://pandas.pydata.org/] - For Data Manipulation and Analysing, need to download externally.
+ (Matplotlib)[https://matplotlib.org/] - For Data Visualisation, need to download externally.
+ (requests)[http://docs.python-requests.org/en/master/] - For fetching the HTML document, part of your standard library.
 
 ## Graph ##
 
