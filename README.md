@@ -1,6 +1,6 @@
 # WFC
 ## About ##
-Word Frequency Counter used to scrap all headlines of the first twenty pages from [YCombinator News](https://news.ycombinator.com/)
+Word Frequency Counter used to scrap all headlines of the first twenty pages from [YCombinator News](https://news.ycombinator.com/) and to count the frequently occuring words and plot them as a Bar Chart.
 
 ## Built with: ##
 
