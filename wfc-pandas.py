@@ -44,10 +44,7 @@ def clean_filter(word_list):
 		return re.sub('[,./<>?;\':"\[\]{}|`~\-_=+)(*&^%$#@!]', '', i)
 		
 	word_list = list(map(check_each_character, word_list))
-	clean_list = []
-	for eachWord in word_list:
-		if len(eachWord) > 1:
-			clean_list.append(eachWord)
+	clean_list = [ eachWord for eachWord in word_list if len(eachWord) > 1]
 	return clean_list
 
 
