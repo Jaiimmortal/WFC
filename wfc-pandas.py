@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 from matplotlib import style
 import os
 import shutil
+import re
 
 style.use('ggplot')
 
@@ -36,19 +37,18 @@ def scramble(url):
                 word_list.append(eachWord)
                 
 #Function to remove the unnecessary special characters from the words such as ", : etc
-def clean_filter(word_list):
 
-    clean_list = []
-    newword = ''
-    junk = "!@#$%^&*()-_+=[]{}|'\":;<>,.?/"
-    for word in word_list:
-        for char in word:
-            if char not in junk:
-                newword = newword + char
-        if len(newword) > 1:
-            clean_list.append(newword)
-        newword = ''
-    return clean_list
+def clean_filter(word_list):
+	
+	def check_each_character(i):
+		return re.sub('[,./<>?;\':"\[\]{}|`~\-_=+)(*&^%$#@!]', '', i)
+		
+	word_list = list(map(check_each_character, word_list))
+	clean_list = []
+	for eachWord in word_list:
+		if len(eachWord) > 1:
+			clean_list.append(eachWord)
+	return clean_list
 
 
 if __name__ == '__main__':
