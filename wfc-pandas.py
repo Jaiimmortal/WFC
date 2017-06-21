@@ -1,8 +1,12 @@
 import requests
-from bs4 import BeautifulSoup
+import datetime 
+import time
 import pandas as pd
+from bs4 import BeautifulSoup
 from matplotlib import pyplot as plt
 from matplotlib import style
+import os
+import shutil
 
 style.use('ggplot')
 
@@ -10,7 +14,14 @@ style.use('ggplot')
 def goPandas(word_list):
 
     S = pd.Series(word_list).value_counts().sort_values(ascending = False).head(25)
-    plt.figure(); plt.title('Top twenty-five words in the headlines of news.ycombinator.com'); plt.xlabel('Words'); plt.ylabel('Number of occurences'); S.plot(kind='bar'); plt.show()
+    plt.figure(); plt.title('Top 25 words in the headlines of news.ycombinator.com')
+    plt.subplots_adjust(bottom = 0.16)
+    plt.xlabel('Words'); plt.ylabel('Number of occurences'); S.plot(kind='bar'); 
+    plt.savefig('new-data.png')
+    plt.show()
+    os.mkdir('Images-over-time')
+    shutil.move('new-data.png','Images-over-time/new-data.png')
+    #str(datetime.datetime.fromtimestamp(time.time()))+'.png'
     
 def scramble(url):
     
@@ -23,6 +34,22 @@ def scramble(url):
         headline = topics.get_text().lower().split()
         for eachWord in headline:
                 word_list.append(eachWord)
+                
+#Function to remove the unnecessary special characters from the words such as ", : etc
+def clean_filter(word_list):
+
+    clean_list = []
+    newword = ''
+    junk = "!@#$%^&*()-_+=[]{}|'\":;<>,.?/"
+    for word in word_list:
+        for char in word:
+            if char not in junk:
+                newword = newword + char
+        if len(newword) > 1:
+            clean_list.append(newword)
+        newword = ''
+    return clean_list
+
 
 if __name__ == '__main__':
 
@@ -31,8 +58,7 @@ if __name__ == '__main__':
     word_list = []
     for url in Top20:
         scramble(url)
-
-    goPandas(word_list)
+    goPandas(clean_filter(word_list))
 
 else:
 
