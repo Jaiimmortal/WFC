@@ -12,3 +12,9 @@ Word Frequency Counter used to scrap all headlines of the first twenty pages fro
 ## Graph ##
 
 ![Bar chart](/../master/Images-over-time/new-data.png?raw=true "WFC")
+
+## To Do
+
+- [x] Rotate the xticks by 45 degrees 
+- []  Put the values over the bar for each x
+- []  Annotate the date over the graph
