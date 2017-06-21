@@ -11,4 +11,4 @@ Word Frequency Counter used to scrap all headlines of the first twenty pages fro
 
 ## Graph ##
 
-![Bar chart of the Series as of 01-06-2017 20:33 hrs](/../master/bar_chart-2017-06-01_2033hrs.png?raw=true "WFC")
+![Bar chart](/../master/Images-over-time/new-data.png?raw=true "WFC")
