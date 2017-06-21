@@ -15,6 +15,6 @@ Word Frequency Counter used to scrap all headlines of the first twenty pages fro
 
 ## To Do
 
-- [x] Rotate the xticks by 45 degrees.
+- [ ] Rotate the xticks by 45 degrees.
 - [ ] Put the values over the bar for each x.
 - [ ] Annotate the date over the graph.
